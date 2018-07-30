@@ -36,10 +36,10 @@ class App extends Component {
 
 onButtonSubmit = () => {
   this.setState({imageUrl:this.state.input})
-  app.models.predict("a403429f2ddf4b49b307e318f00e528b", "https://samples.clarifai.com/face-det.jpg").then(
+  app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input).then(
     function(response) {
       // do something with response
-      console.log(response);
+      console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
     },
     function(err) {
       // there was an error
@@ -48,8 +48,14 @@ onButtonSubmit = () => {
 }
 
   onInputChange = (event) => {
+    this.setState({input: event.target.value});
     console.log(event.target.value);
   }
+
+  onSubmit = () => {
+    console.log('click');
+  }
+
   render() {
     return (
       <div className="App">
