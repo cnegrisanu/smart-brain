@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
 
 class Signin extends React.Component {
     constructor(props){

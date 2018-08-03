@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
 import Tilt from 'react-tilt';
 import './Logo.css';
 import brain from './brain.png';
