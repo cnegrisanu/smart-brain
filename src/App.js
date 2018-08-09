@@ -75,7 +75,7 @@ displayFaceBox = (box) => {
 
 onButtonSubmit = () => {
   this.setState({imageUrl:this.state.input});
-  fetch('http://localhost:3000/imageurl',{
+  fetch('https://frozen-depths-68731.herokuapp.com/imageurl',{
     method: "POST",
     headers: {'content-Type': 'application/json'},
     body: JSON.stringify({
@@ -85,7 +85,7 @@ onButtonSubmit = () => {
   .then(response => response.json())
   .then(response => {
     if(response){
-      fetch('http://localhost:3000/image',{
+      fetch('https://frozen-depths-68731.herokuapp.com/image',{
         method: "PUT",
         headers: {'content-Type': 'application/json'},
         body: JSON.stringify({
